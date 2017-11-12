@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "description": "A user schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "maxLength": 140
+    },
+    "age": {
+      "type": "integer",
+      "minimum": 0 
+    },
+    "date_of_birth": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "name",
+    "age",
+    "date_of_birth"
+  ]
+}

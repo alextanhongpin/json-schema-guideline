@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "description": "A user with location compound schema",
+  "id": "https://seekasia.com/schemas/user-with-location.json",
+  "type": "object",
+  "allOf":[
+    { "$ref": "location.json" },
+    { "$ref": "user.json" },
+    {
+      "type": "object",
+      "properties": {
+        "flag": { "type": "boolean" }
+      },
+      "required": [ "flag" ]
+    }
+  ]
+}

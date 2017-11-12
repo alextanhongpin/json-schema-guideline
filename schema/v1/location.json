@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "description": "A location schema",
+  "id": "https://seekasia.com/schemas/location.json",
+  "type": "object",
+  "definitions": {
+    "location": {
+      "type": "object",
+      "properties": {
+        "latitude": {
+          "type": "number",
+          "minimum": -90,
+          "maximum": 90
+        },
+        "longitude": {
+          "type": "number",
+          "maximum": 180,
+          "minimum": -180
+        }
+      },
+      "required": [
+        "latitude",
+        "longitude"
+      ]
+    }
+  },
+  "allOf":[
+    { "$ref": "#/definitions/location" }
+  ]
+}

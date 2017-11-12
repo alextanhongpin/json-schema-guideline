@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "description": "A user schema",
+  "id": "https://seekasia.com/schemas/user.json",
+  "type": "object",
+  "definitions": {
+    "user": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "examples": ["John Doe"],
+          "description": "A valid unique name",
+          "type": "string",
+          "maxLength": 140
+        },
+        "age": {
+          "examples": [10, 20],
+          "description": "A valid age",
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "name",
+        "age"
+      ]
+    }
+  },
+  "allOf": [
+    { "$ref": "#/definitions/user" }
+  ]
+}
