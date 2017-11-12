@@ -234,14 +234,14 @@ The json schema is loaded **once** and **cached** on our client side.
 
 ### Versioning
 
-To ensure that the client will not break, we can introduce versioning to our schema endpoint:
+To ensure that the client will not break, we can introduce versioning to our schema endpoint. We can separate the folders within the schema into different version:
 
-```javascript
-// Instead of this...
-app.use('/schemas', express.static(path.join(__dirname, 'schema')))
-
-// Do this
-app.use('/schemas/v1', express.static(path.join(__dirname, 'schema')))
+```bash
+- schema
+  - v1
+    - user.json
+  - v2
+    - user.json
 ```
 
 Note that the producer should strive to make the schema as *backward-compatible* as possible, and the consumer should strive to use *latest* schema as soon as possible.
