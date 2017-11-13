@@ -52,6 +52,7 @@ For `compound keywords`:
 - `not`, `oneOf`, `anyOf`, `allOf`
 - create `definitions` to promote reusability
 
+Naming for id can be the `email.json`, `test.json` instead of a `url`.
 
 ## Basic Example
 
