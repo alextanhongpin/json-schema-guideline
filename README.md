@@ -345,4 +345,35 @@ You can compose your schemas to achieve that. The following is the content of `u
 ```
 
 
+## Removing Additional Properties
 
+Set the field `additionalProperties` to false to remove fields that are not in used.
+
+```json
+{
+	"id": "getTransactionResponse",
+	"$schema": "http://json-schema.org/draft-06/schema#",
+	"title": "getTransactionResponse",
+	"description": "Returns a transaction matching the given transaction hash",
+	"definitions": {
+		"transaction": {
+			"type": "object",
+			"properties": {
+				"field1": {
+					"description": "",
+					"type": "string"
+				},
+			},
+			"additionalProperties": false
+		}
+	},
+	"oneOf": [
+		{
+			"type": "null"
+		},
+		{
+			"$ref": "#/definitions/transaction"
+		}
+	]
+}
+```
